@@ -34,31 +34,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <style>
 #barra li{
 	display:inline-block;
-	font-size: 20px;
+	font-size: 17px;
 	color:white;
+
+
+ margin-right: 30px;
+
+
 }
 #barra{
 	width: 100%;
 list-style:none;
-margin: 10px 20px 20px 400px;
+margin: 10px 10px 20px 400px;
 padding:0;
+
+		list-style: none;
+		display:flex;
+		justify-content:center;
+		align-items: center;
+
 
 }
 #barra li a{
 	padding:10px 20 px;
 	display:inline-block;
-}
-#barra li a:hover{
-	background: #ccc;
+	color:white; 
 
+	
 }
+
 </style>
 <!--estilos para la navbar-->
 </head>
 <body class="cbp-spmenu-push">
 
 	
-<div id="home" class="banner">
+<div id="home" class="banner " >
 	 <div class="container">
 		 <div class="header">
 			 <!--codigo de pruebas-->
@@ -71,44 +82,19 @@ padding:0;
 
 			--> 
 			<ul id = "barra">
-				<li><a href="#">Planes </a> </li>
+				<li ><a href="#">Planes </a> </li>
 				<li><a href="#">Ingresar</a></li>
-				<li><a href="#">Registrate gratis</a></li>
+				
+			<li><button type = "button" class = "btn  btn-lg" style="background-color: #5cd480; color:#ccc;
+        width:180px; height:38px; font-size:17px
+			" onmouseover="this.style.background='#5DADE2'"
+				onmouseout="this.style.background=' #5cd480'" >
+				<a href="#">Registrate gratis</a></button></li>
 			</ul>
-			 <div class="top-nav">
-				<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-					<h3>Menu</h3>
-					<a class="scroll" href="#home" class="active">Home</a>
-					<a class="scroll" href="#feature">Features</a>
-					<a class="scroll" href="#screenshots">Screen Shots</a>
-					<a class="scroll" href="#team">Team</a>
-				</nav>
-				<div class="main buttonset">	
-						<!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
-						<button id="showRightPush"><img src="images/menu-icon.png" alt=""/></button>
-						<!--<span class="menu"></span>-->
-				</div>
-				<!-- Classie - class helper functions by @desandro https://github.com/desandro/classie -->
-				<script src="js/classie.js"></script>
-				<script>
-				var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
-				showRightPush = document.getElementById( 'showRightPush' ),
-				body = document.body;
+			
+			
 
-				showRightPush.onclick = function() {
-					classie.toggle( this, 'active' );
-					classie.toggle( body, 'cbp-spmenu-push-toleft' );
-					classie.toggle( menuRight, 'cbp-spmenu-open' );
-					disableOther( 'showRightPush' );
-				};
-
-				function disableOther( button ) {
-					if( button !== 'showRightPush' ) {
-						classie.toggle( showRightPush, 'disabled' );
-					}
-				}
-			 </script>
-	     </div>
+	
 			<div class="clearfix"></div>
 		 </div>
 		 
@@ -295,7 +281,24 @@ padding:0;
 </div>
 
 
+<script>
+	var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+	showRightPush = document.getElementById( 'showRightPush' ),
+	body = document.body;
 
+	showRightPush.onclick = function() {
+		classie.toggle( this, 'active' );
+		classie.toggle( body, 'cbp-spmenu-push-toleft' );
+		classie.toggle( menuRight, 'cbp-spmenu-open' );
+		disableOther( 'showRightPush' );
+	};
+
+	function disableOther( button ) {
+		if( button !== 'showRightPush' ) {
+			classie.toggle( showRightPush, 'disabled' );
+		}
+	}
+ </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

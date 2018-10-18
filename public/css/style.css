@@ -24,13 +24,16 @@ padding:0;
 }
 /*----*/
 .banner{
-	background:url(../images/logoi.jpg) no-repeat;
+  background:url(../images/logoi.jpg) no-repeat;
+/*background: rgba(34, 153, 84, 1.0);*/
 	background-size:cover;
-	min-height:720px;
+	min-height:640px;
 	position:relative;
 }
+
 .header{
-	padding-top:2em;
+  padding-top:2em;
+  
 }
 .logo{
 	float:left;
