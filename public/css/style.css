@@ -23,25 +23,25 @@ margin:0;
 padding:0;
 }
 /*----*/
+
+
 .banner{
-  background:url(../images/logoi.jpg) no-repeat;
+  background:url(../images/logoiv.jpg) no-repeat;
 /*background: rgba(34, 153, 84, 1.0);*/
 	background-size:cover;
-	min-height:640px;
+	min-height:590px;
 	position:relative;
 }
 
-.header{
-  padding-top:2em;
-  
-}
+
+
 .logo{
 	float:left;
 }
-.top-nav{
+/*.top-nav{
 	float:right;
 	margin-right:0em;
-}
+}*/
 button#showRightPush {
   border: none;  
   padding: 6px;
@@ -76,7 +76,7 @@ nav#cbp-spmenu-s2 a.active,nav#cbp-spmenu-s2 a:hover {
 nav#cbp-spmenu-s2 h3 {
   background:#1ce4ef;
   color: white;
-}
+} */
 .hand {
 	position:absolute;
 	right:0px;
