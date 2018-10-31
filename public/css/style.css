@@ -13,6 +13,101 @@ body a{
 	text-decoration:none;
 	outline:none;
 }
+
+/*TEAM*/
+.team{
+	background:url(../images/bg2.jpg) no-repeat 0px 0px;
+	background-size:cover;
+	padding:4em 0 0 0;
+	min-height:570px;
+}
+
+.team h3{
+    font-size:3.5em;
+    color:#000;
+    font-weight:500;
+    text-align:center;
+}
+.team-grids{
+	margin-top:4em;
+}
+.team-grid img{
+    margin-bottom:1em;
+}
+.team-grid h4{
+	font-size:1.6em;
+	font-weight:500;
+	margin-bottom:0.5em;
+	color:#000;
+}
+.team-grid p{
+	color:#382e48;
+	font-size:1.15em;
+	font-weight:500;
+}
+.team-grid img{
+	border-radius:50%;
+	-webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.team-grid {
+	margin-bottom:2em;
+	margin-top: 3em;
+}
+.team-grids {
+    margin-top: 3em;
+  }
+  .team {
+    padding: 3em 0 0 0;
+  }
+  .team-grid p {
+    font-size: 1em;
+  }
+  .feature-info h3, .landing h3, .screen-shots h3, .team h3, .subscribe h3 {
+    font-size: 1.85em;
+  }
+  .team-grid h4 {
+    font-size: 1.4em;
+  }
+  .team-grid p {
+    font-size: 0.95em;
+  }
+  .team-grid p {
+    font-size: 0.8em;
+  }
+  .feature-info h3, .landing h3, .screen-shots h3, .team h3, .subscribe h3 {
+    font-size: 1.3em;
+  }
+  .team {
+    padding: 2em 0 0 0;
+  }
+  .team-grid {
+    padding: 0;
+  }
+  .team-grid img {
+    border-radius: 65%;
+    -webkit-border-radius: 65%;
+    -moz-border-radius: 65%;
+    -ms-border-radius: 65%;
+    -o-border-radius: 65%;
+    width: 45%;
+  }
+  .team-grid h4 {
+    font-size: 1.2em;
+  }
+  .feature-info h3,.landing h3, h3,.team h3,.subscribe h3 {
+    font-size: 2.6em;
+  }
+  .feature-info h3, .landing h3,  h3, .team h3, .subscribe h3 {
+    font-size: 2.3em;
+  }
+  .team {
+    min-height: 550px;
+  }
+/*TEAM*/
+
 h1,h2,h3,h4,h5,h6{
 	margin:0;  
 	font-family: 'Petit Formal Script', cursive; 
