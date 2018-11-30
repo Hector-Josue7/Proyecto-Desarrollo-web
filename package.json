@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Hector-Josue7/Proyecto-desarrollo-web#readme",
   "dependencies": {
+    "cookie-parser": "^1.4.3",
     "express": "^4.16.4"
   }
 }

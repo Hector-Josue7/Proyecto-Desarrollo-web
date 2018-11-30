@@ -15,6 +15,8 @@
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
+
+
 	</script>
 	<!-- //Meta tag Keywords -->
 
@@ -24,6 +26,7 @@
 	<link rel="stylesheet" href="css/style-planes.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
 	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/single-planes.css">
 	<!-- Font-Awesome-Icons-CSS -->
 	<!-- //Custom-Files -->
 
@@ -34,35 +37,103 @@
 	 rel="stylesheet">
     <!-- //Web-Fonts -->
     <style>
-    section {
-    
-    width: 91%;
-    border-top: 1px dashed #999;
-    margin: 15px auto;
+   
+
+
+
+/******************/
+/*
+html, body{
+    margin: 0;
+    padding: 0;
 }
-figure{
-    float:left;
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
 }
-figure img{
-    padding: 4px;
-    background: #666;
-    border-radius: 20px;
-    -webkit-transition:-webkit-transform 0.3s ease-in-out 0.1s; /*VELOCIDAD DE TRANSICIONES*/
-    box-shadow: #999 5px 5px 10px;
-    
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
 }
-figure img:hover{  /*ESTO ES PARA CUANDO SE PASE EL MOUSE SOBRE ENCIMA*/
-    -webkit-transform:scale(1.2);
+
+
+
+
+
+
+
+
+
+
+
+
 }
-figcaption{
-    
-    font-family: Arial, Helvetica, sans-serif;
-    font-size:1.3em;
-    text-align:center;
-    margin-top:5px;
+
+
+
+*/
+.tarjeta{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
 }
+
+.container .card{
+    width: 330px;
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width: 330px;
+    height: 220px;
+}
+
+.container .card h4{
+    font-weight: 600;
+}
+.container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+.container .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
+
+
     </style>
 </head>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
 
 <body>
     <!-- header -->
@@ -138,34 +209,40 @@ figcaption{
 			</div>
 		</div>
 	</div>
-    <section>
-            <figure>
-                 <img src="imagenes/1.jpg" alt="Flores de corte" width="200" height="200">
-               
-               <figcaption>
-                 Foto 1: Flores de corte   
-                </figcaption>
-                  </figure>
-                  
-                  <figure>
-               
-                 <img src="imagenes/2.jpg" alt="Mirabilis Jalapa" width="200" height="200">
-                <figcaption>
-                 Foto 2: Flor de Mirabilis Jalapa
-                      </figcaption>
-                  </figure>
-               <figure>
-                 <img src="imagenes/3.jpg" alt="Strelitzia" width="200" height="200">
-                <figcaption>
-                Foto3: Strelitzia. Flores de las aves.
-                   </figcaption>
-                  </figure>
-                 
-               </section>
-
-
-
 	
+	<h1 class="title">Card con efecto hover - Magtimus</h1>
+    
+    <div class="container">
+       <div class="tarjeta">
+		<div class="card">
+            <img src="images/img1.jpg">
+            <h4>Naturaleza</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+            <a href="#">Leer más</a>
+        </div>
+        
+        <div class="card">
+            <img src="images/img2.jpg">
+            <h4>Comida</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+            <a href="#">Leer más</a>
+        </div>
+        
+        <div class="card">
+            <img src="images/img3.jpg">
+            <h4>Tecnología</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, excepturi unde?</p>
+            <a href="#">Leer más</a>
+        </div>
+	   </div>
+    
+        
+    </div>
+
+
+	  
+  
+
 	<!-- JavaScript -->
 	<script src="js/jquery.min.js"></script>
 	<!-- Default-JavaScript-File -->
@@ -230,7 +307,9 @@ figcaption{
 	<!-- Necessary-JavaScript-File-For-Bootstrap -->
 	<!-- //Js files -->
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>
 
 </html>
