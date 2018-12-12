@@ -12,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfonts-->
-
+<link rel="stylesheet" href="css/bootstrap.css">
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 <!--//webfonts-->
 
@@ -46,19 +46,30 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       <h2>O registrate en adamantiun codes</h2>
 		<form>
 		   <div class="lable">
-		        <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" id="active"></div>
-                <div class="col_1_of_2 span_1_of_2"><input type="text" class="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></div>
+		        <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'nombre';}" id="nombre"></div>
+                <div class="col_1_of_2 span_1_of_2"><input type="text" class="text" value="apellido" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" id ="apellido"></div>
                 <div class="clear"> </div>
 		   </div>
 		   <div class="lable-2">
-		        <input type="text" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}">
-		        <input type="password" class="text" value="Password " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password ';}">
+		        <input type="text" class="text" value="tú@correo.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'tú@correo.com ';}" id="correo">
+		        <input type="password" class="text" value="contrasena " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'contrasena';}" id ="contrasena">
 				  <br> <br>
 				</div>
-			<div class="form-group" style="color:white"><b>Genero: </b>  
-				<label><input class="radio-inline" type ="radio" name ="sexo" value ="F">Femenino </label>
-				<label><input class="radio-inline" type ="radio" name ="sexo" value ="M">Masculino </label><br>
-			 </div>
+
+			 <div class="form-group">
+				<label for="sel1" style="color:white">Elija el plan que desea:</label>
+				<div class="row">
+                  <div class="col-lg-4 col-sm-5 col-xs-6">
+					<select class="form-control " id="plan" >
+						<option>Gratis</option>
+						<option>Normal</option>
+						<option>Premiun</option>
+				  </select>
+				  </div>
+				
+				</div>
+	
+			  </div><br>
 			 <!--
 	 <label for="register-age" >Fecha de nacimiento</label>
                 <div id="register-dob" class="register-dob">
@@ -80,9 +91,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 		  
-		   <div class="submit">
-			  <input type="submit" onclick="myFunction()" value="Create account" >
-		   </div>
+		 
+	 <input type="button" id="btn-registrar" value="Crear cuenta" id="btn-registrar" class="button btn-success btn-lg">
+		
 			<div class="clear"> </div> <br>
 			<p class="form_link" style="color: white">¿Ya tienes una cuenta?<a href="#" style="color:aqua">Ingresa aqui</a></p>
 		</form>
@@ -99,7 +110,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $(this).css("background-color", "#ffffff");
     });
 });
+
+
+ $("#btn-registrar").click(function(){
+			var parametros = `nombre=${$("#nombre").val()} &apellido=${$("#apellido").val()}  
+			&correo=${$("#correo").val()}
+			&contrasena=${$("contrasena").val()}&plan=${$("#plan").val()}`;
+            console.log(parametros);
+            $.ajax({
+                url:"/guardar",
+                method:"GET",
+                data: parametros,
+                dataType:"json", //json
+                success: function(respuesta){ //200 OK
+                    console.log(respuesta);
+                },
+                error:function(error){
+                    console.error(error);
+                }
+            });
+        });
 		 </script>
+		 
    	
 				<!-----//end-copyright---->
 </body>
