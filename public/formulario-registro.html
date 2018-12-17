@@ -44,23 +44,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="clear"> </div>	
       </div>
       <h2>O registrate en adamantiun codes</h2>
-		<form>
+		<form action="/procesar" method="POST" id="" name="" onsubmit="return validacion()">
 		   <div class="lable">
-		        <div class="col_1_of_2 span_1_of_2">	<input type="text" class="text" value="nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'nombre';}" id="nombre"></div>
-                <div class="col_1_of_2 span_1_of_2"><input type="text" class="text" value="apellido" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" id ="apellido"></div>
+		        <div class="col_1_of_2 span_1_of_2">	<input type="text" required="required"class="text" value="nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'nombre';}" id="nombre"></div>
+                <div class="col_1_of_2 span_1_of_2"><input type="text" class="text"  required="required" value="apellido" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" id ="apellido"></div>
                 <div class="clear"> </div>
 		   </div>
 		   <div class="lable-2">
-		        <input type="text" class="text" value="tú@correo.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'tú@correo.com ';}" id="correo">
-		        <input type="password" class="text" value="contrasena " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'contrasena';}" id ="contrasena">
+		        <input type="text" class="text" required="required" value="tú@correo.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'tú@correo.com ';}" id="correo">
+		        <input type="password" class="text" required="required" value="contrasena " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'contrasena';}" id ="contrasena">
 				  <br> <br>
 				</div>
+				<div class="col-12">
+					<p style="color:white">Fecha de nacimiento</p> 
+					<input class="form-control" type="date" placeholder="Birthday" id= "cumpleanos">
+				
+				  </div>
 
 			 <div class="form-group">
 				<label for="sel1" style="color:white">Elija el plan que desea:</label>
 				<div class="row">
                   <div class="col-lg-4 col-sm-5 col-xs-6">
-					<select class="form-control " id="plan" >
+					<select class="form-control " id="plan"  >
 						<option>Gratis</option>
 						<option>Normal</option>
 						<option>Premiun</option>
@@ -92,7 +97,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		  
 		 
-	 <input type="button" id="btn-registrar" value="Crear cuenta" id="btn-registrar" class="button btn-success btn-lg">
+	 <input type="button" id="btn-registrar" value="Crear cuenta" id="btn-registrar" class="button btn-success btn-lg" onclick=" validacion()">
 		
 			<div class="clear"> </div> <br>
 			<p class="form_link" style="color: white">¿Ya tienes una cuenta?<a href="#" style="color:aqua">Ingresa aqui</a></p>
@@ -111,8 +116,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     });
 });
 
-
- $("#btn-registrar").click(function(){
+$("#btn-registrar").click(function(){
 			var parametros = `nombre=${$("#nombre").val()} &apellido=${$("#apellido").val()}  
 			&correo=${$("#correo").val()}
 			&contrasena=${$("contrasena").val()}&plan=${$("#plan").val()}`;
