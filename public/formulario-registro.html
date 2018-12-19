@@ -44,7 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="clear"> </div>	
       </div>
       <h2>O registrate en adamantiun codes</h2>
-		<form action="/procesar" method="POST" id="" name="" onsubmit="return validacion()">
+		<form >
 		   <div class="lable">
 		        <div class="col_1_of_2 span_1_of_2">	<input type="text" required="required"class="text" value="nombre" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'nombre';}" id="nombre"></div>
                 <div class="col_1_of_2 span_1_of_2"><input type="text" class="text"  required="required" value="apellido" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" id ="apellido"></div>
@@ -97,46 +97,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		  
 		 
-	 <input type="button" id="btn-registrar" value="Crear cuenta" id="btn-registrar" class="button btn-success btn-lg" onclick=" validacion()">
+	 <input type="button" id="btn-registrar" value="Crear_cuenta"  class="button btn-success btn-lg">
 		
 			<div class="clear"> </div> <br>
-			<p class="form_link" style="color: white">¿Ya tienes una cuenta?<a href="#" style="color:aqua">Ingresa aqui</a></p>
+			<p class="form_link" style="color: white">¿Ya tienes una cuenta?<a href="/public/login.html" style="color:aqua">Ingresa aqui</a></p>
 		</form>
 		<!-----//end-main---->
 		</div>
 		 <!-----start-copyright---->
 
-		 <script>
-			 $(document).ready(function(){
-    $("input").focus(function(){
-        $(this).css("background-color", "#cccccc");
-    });
-    $("input").blur(function(){
-        $(this).css("background-color", "#ffffff");
-    });
-});
-
-$("#btn-registrar").click(function(){
-			var parametros = `nombre=${$("#nombre").val()} &apellido=${$("#apellido").val()}  
-			&correo=${$("#correo").val()}
-			&contrasena=${$("contrasena").val()}&plan=${$("#plan").val()}`;
-            console.log(parametros);
-            $.ajax({
-                url:"/guardar",
-                method:"GET",
-                data: parametros,
-                dataType:"json", //json
-                success: function(respuesta){ //200 OK
-                    console.log(respuesta);
-                },
-                error:function(error){
-                    console.error(error);
-                }
-            });
-        });
-		 </script>
 		 
+		 <script>
+
+            
+$('#btn-registrar').click(function(){
+        var data = { nombre : $('#email').val(), password : $('#pass').val() };
+        $.ajax({
+                url : '/enviar',
+                data : data, 
+                method : 'post', //en este caso
+                dataType : 'json',
+                success : function(response){
+                      alert("Se ha registrado muy bien");
+                },
+                error: function(error){
+					   //codigo error
+					   alert("No se ha podido registrar");
+                }
+        });
+});
+		 </script>
    	
 				<!-----//end-copyright---->
+				<script src="js/controlador.js"></script>
+				<script src="js/jquery.min.js"></script>
 </body>
 </html>

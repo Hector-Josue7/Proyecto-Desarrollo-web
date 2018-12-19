@@ -122,6 +122,42 @@ if( indice == null || indice == 0 ) {
 }
 
 
+
+
+
+
+/*
+var objJSON = {
+            nombre: document.getElementById("nombre").value,
+            apellido:document.getElementById("apellido").value,
+            correo:document.getElementById("correo").value,
+            contrasena:document.getElementById("contrasena").value,
+            cumpleanos:document.getElementById("cumpleanos").value,
+            plan:document.getElementById("plan").value
+        };
+            $('#btn-registrar').click(function(){
+            var data = objJSON;
+            $.ajax({
+                url : '/enviar',
+                data : data,
+                method : 'post', //en este caso
+                dataType : 'json',
+                success : function(response){
+                    alert("funciona bien");
+                },
+                error: function(error){
+                    alert("No funciona");
+                }
+            });
+        });
+*/
+           
+	
+
+
+
+
+
 ///********************************************************* */
 $("#btn-login").click(function(){
     console.log($("#formulario").serialize());
