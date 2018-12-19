@@ -156,7 +156,7 @@ router.get('/select', function(req, res) {
 app.post("/login",function(req, res){
    var conexion = mysql.createConnection(credenciales);
    conexion.query(
-       "SELECT ID_USUARIO, CORREO, CONTRASENA FROM USUARIOS WHERE CONTRASENA = sha1(?) and CORREO=?",
+       "SELECT  CORREO, CONTRASENA FROM USUARIOS WHERE CONTRASENA = sha1(?) and CORREO=?",
        [req.body.CORREO, req.body.CONTRASENA],
        function(error, data, fields){
            if (error){
