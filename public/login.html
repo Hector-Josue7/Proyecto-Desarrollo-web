@@ -31,10 +31,10 @@
       </div>
       <form action="#" method="post">
         <div class="form-left-w3l">
-          <input type="email" placeholder="Email" required="">
+          <input type="email" placeholder="Email" required="" id="correo-usuario">
         </div>
         <div class="form-left-w3l">
-          <input type="password" placeholder="password" required="">
+          <input type="password" placeholder="password" required="" id="contrasena">
         </div>
         <div class="rem-pass-agile">
           <div class="left-side">
@@ -47,7 +47,7 @@
           <div class="clear"></div>
         </div>
         <div class="btnn">
-          <button type="button" id = "btn-login" onclick="sendForm()">Iniciar sesión</button><br>
+          <button type="submit" id = "btn-login" onclick="sendForm()">Iniciar sesión</button><br>
           <div class="clear"></div>
         </div>
       </form>
@@ -67,6 +67,34 @@
       </div>
     </div>
 </form>
+<script>
+
+$(document).ready(function() {
+
+
+$('formulario-login').submit(function() {
+   $.ajax({
+      type:'POST',
+      url:'/login',
+      data:  {correo: $('#correo-usuario').val(), contrasena: $('#contrasena').val()},
+      success:function(result){
+         if(!result){
+            //$('form input[name="username"]').css("background-color", "red");
+         }
+
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+         console.log(xhr.status);
+         console.log(thrownError);
+      }
+   });
+
+
+   return false;
+});
+
+});
+</script>
 <script src="js/controlador.js"></script>
   </body>
 </html>
