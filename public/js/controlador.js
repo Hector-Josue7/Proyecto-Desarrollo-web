@@ -158,9 +158,9 @@ var objJSON = {
 
 
 
-///********************************************************* */
+/********************************************************* 
 $("#btn-login").click(function(){
-    console.log($("#formulario").serialize());
+
     $.ajax({
         url:"/login",
         method:"POST",
@@ -178,3 +178,8 @@ $("#btn-login").click(function(){
         }
     });
 });
+
+
+
+*/
+

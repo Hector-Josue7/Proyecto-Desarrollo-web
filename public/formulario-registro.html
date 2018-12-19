@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfonts-->
+<script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 <!--//webfonts-->
@@ -97,7 +98,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		  
 		 
-	 <input type="button" id="btn-registrar" value="Crear_cuenta"  class="button btn-success btn-lg">
+	 <input type="button" id="btn-registrar" value="Crear_cuenta"  class="button btn-success btn-lg" onclick="accion()">
 		
 			<div class="clear"> </div> <br>
 			<p class="form_link" style="color: white">¿Ya tienes una cuenta?<a href="/public/login.html" style="color:aqua">Ingresa aqui</a></p>
@@ -109,9 +110,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 
 		 <script>
 
-            
-$('#btn-registrar').click(function(){
-        var data = { nombre : $('#email').val(), password : $('#pass').val() };
+function accion(){
+
+	$('#btn-registrar').click(function(){
+		var data = { nombre : $('#nombre').val(),
+					 apellido : $('#apellido').val(),
+					 apellido : $('#apellido').val(),
+					 correo : $('#correo').val(),
+					 apellido : $('#apellido').val(),
+					 contrasena : $('#contrasena').val(),
+					 cumpleanos : $('#cumpleanos').val(),
+					 plan : $('#plan').val()
+					
+					
+					};
         $.ajax({
                 url : '/enviar',
                 data : data, 
@@ -126,10 +138,18 @@ $('#btn-registrar').click(function(){
                 }
         });
 });
-		 </script>
+
+}
+            
+		
+		
+
+		
+		
+		</script>
    	
 				<!-----//end-copyright---->
 				<script src="js/controlador.js"></script>
-				<script src="js/jquery.min.js"></script>
+				
 </body>
 </html>

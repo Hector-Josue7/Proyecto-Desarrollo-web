@@ -29,4 +29,25 @@ router.get("/eliminar",function(req, res){
     res.send("Eliminar un usuario");
 });
 
+
+router.get("/almacenar-sesion/:usuario",function(req, res){
+   req.session.usuario = req.params.usuario;
+   res.send("Se guardo la sesion");
+   res.end();
+});
+
+router.get("/obtener-sesion",function(req, res){
+   res.send("La sesion almacenada es : " + req.session.usuario);
+   res.end();
+});
+
+
+router.get("/obtener-session",function(req,res){
+   res.send("Codigo Usuario: " + req.session.codigoUsuario+
+           ", Correo: " + req.session.correoUsuario +
+           ", Tipo Usuario: " + req.session.codigoTipoUsuario
+   );
+   res.end();
+});
+
 module.exports = router;

@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var router = express.Router();
 var session = require("express-session");
 var usuarios = require("./modulos/sesiones");
+var sesiones = require("./modulos/sesiones");
 var fs = require('fs');
 
 var app = express();
@@ -97,7 +98,7 @@ La función  JSON.stringify   permite transformar un objeto
          res.redirect('/');
      }
    );
-conexion.end();
+
 });
 app.get("/cerrar-sesion",function(req,res){
    req.session.destroy();
@@ -123,6 +124,7 @@ app.post("/procesar",function(req,res){ //req: Peticion, res: Respuesta
 //Verificar si existe una variable de sesion para poner publica la carpeta dashboard
 var home = express.static("dashboard");
 /*
+
 app.use(
     function(req,res,next){
         if (req.session.correo){
@@ -136,6 +138,13 @@ app.use(
     }
 );
 
+*/
+app.use(function (err, req, res, next) {
+   console.error(err.stack)
+   res.status(500).send('Something broke!')
+ })
+
+
 
 router.get('/select', function(req, res) {
    database.connection.query('SELECT nombre, apellido FROM usuarios', function(err, rows, fields) {
@@ -143,8 +152,28 @@ router.get('/select', function(req, res) {
    });
 });
 
-*/
 
+app.post("/login",function(req, res){
+   var conexion = mysql.createConnection(credenciales);
+   conexion.query(
+       "SELECT ID_USUARIO, CORREO, CONTRASENA FROM USUARIOS WHERE CONTRASENA = sha1(?) and CORREO=?",
+       [req.body.CORREO, req.body.CONTRASENA],
+       function(error, data, fields){
+           if (error){
+               res.send(error);
+               res.end();
+           }else{
+               if (data.length==1){
+               
+                   req.session.CORREO = data[0].CORREO;
+                   req.session.CONTRASENA = data[0].CONTRASENA;
+               }
+               res.send(data);
+               res.end();
+           }
+       }
+   )
+});
 
 
 
@@ -157,27 +186,7 @@ app.get("/login", function(req,res){
 res.render("login");
 });
 
-app.post("/login",function(req, res){
-   var conexion = mysql.createConnection(credenciales);
-   conexion.query(
-       "SELECT CORREO, CONTRASENA  FROM USUARIOS WHERE CONTRASENA = sha1(?) AND CORREO=?",
-       [req.body.CORREO, req.body.CONTRASENA],
-       function(error, data, fields){
-           if (error){
-               res.send(error);
-               res.end();
-           }else{
-               if (data.length==1){
-                   req.session.codigoUsuario = data[0].codigo_usuario;
-                   req.session.correoUsuario = data[0].correo;
-                   req.session.codigoTipoUsuario = data[0].codigo_tipo_usuario
-               }
-               res.send(data);
-               res.end();
-           }
-       }
-   )
-});
+
 // POST / login obtiene cuerpos urlencoded
 
 
