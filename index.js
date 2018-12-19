@@ -15,6 +15,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(session({secret:"ASDFE$%#%",resave:true, saveUninitialized:true}));
 
+app.use(function (err, req, res, next) {
+   console.error(err.stack)
+   res.status(500).send('Something broke!')
+ })
 
 
 /*CONEXION A BASE DE DATOS */
@@ -107,28 +111,9 @@ app.post("/procesar",function(req,res){ //req: Peticion, res: Respuesta
    res.end();
 });
 
-//Verificar si existe una variable de sesion para poner publica la carpeta dashboard
 
-/*
 
-app.use(
-    function(req,res,next){
-        if (req.session.correo){
-            //Significa que el usuario si esta logueado
-            if (req.session. == 1)
-                publicCajero(req,res,next);
-           
-        }
-        else
-            return next();
-    }
-);
 
-*/
-app.use(function (err, req, res, next) {
-   console.error(err.stack)
-   res.status(500).send('Something broke!')
- })
 
 
 

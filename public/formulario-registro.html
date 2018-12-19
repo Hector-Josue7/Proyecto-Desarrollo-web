@@ -111,7 +111,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 <script>
 
 function accion(){
-
+	/*
+	
 	$('#btn-registrar').click(function(){
 		var data = { nombre : $('#nombre').val(),
 					 apellido : $('#apellido').val(),
@@ -138,6 +139,28 @@ function accion(){
                 }
         });
 });
+	*/
+	$("#btn-registrar").click(function(){
+			var parametros = `nombre=${$("#nombre").val()}
+							  &apellido=${$("#apellido").val()}
+							  &correo=${$("#correo").val()}
+							  &contrasena=${$("#contrasena").val()}
+							  &cumpleanos=${$("#cumpleanos").val()}
+							  &plan=${$("#plan").val()}`;
+            console.log(parametros);
+            $.ajax({
+                url:"/enviar",
+                method:"POST",
+                data: parametros,
+                dataType:"json", //json
+                success: function(respuesta){ //200 OK
+                    console.log(respuesta);
+                },
+                error:function(error){
+                    console.error(error);
+                }
+            });
+        });
 
 }
             
