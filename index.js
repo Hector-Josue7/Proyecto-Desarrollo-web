@@ -34,16 +34,7 @@ fs.appendFile()
 fs.open()
 fs.writeFile() */
 
-  /*
-  var query = connection.query('INSERT INTO USUARIOS(nombre, apellido, biografia) VALUES(?, ?, ?)', ['Homero', 'Simpson', 'Esposo de Marge y padre de Bart, Lisa y Maggie.'], function(error, result){
-   if(error){
-      throw error;
-   }else{
-      console.log(result);
-   }
- }
-); 
-  */
+
 
   /*
     // Transformación de formato JSON a JavaScript
@@ -75,12 +66,6 @@ La función  JSON.stringify   permite transformar un objeto
  });
  
    */
-  function verificarAutenticacion(req, res, next){
-	if(req.session.correoUsuario)
-		return next();
-	else
-		res.send("ERROR, ACCESO NO AUTORIZADO");
-}
 
   app.post("/enviar",function(req,res){
    var conexion = mysql.createConnection(credenciales);
@@ -94,10 +79,11 @@ La función  JSON.stringify   permite transformar un objeto
            req.body.cumpleanos,
            req.body.plan
        ],
-       function() {
-         res.redirect('/');
-     }
-   );
+       function (err, result) {
+         if (err) throw err;
+         console.log("1 record inserted");
+       });
+
 
 });
 app.get("/cerrar-sesion",function(req,res){
@@ -122,7 +108,7 @@ app.post("/procesar",function(req,res){ //req: Peticion, res: Respuesta
 });
 
 //Verificar si existe una variable de sesion para poner publica la carpeta dashboard
-var home = express.static("dashboard");
+
 /*
 
 app.use(
@@ -174,6 +160,29 @@ app.post("/login",function(req, res){
        }
    )
 });
+function verificarAutenticacion(req, res, next){
+	if(req.session.CORREO)
+		return next();
+	else
+		res.send("ERROR, ACCESO NO AUTORIZADO");
+}
+
+//Verificar si existe una variable de sesion para poner publica la carpeta dashboard
+
+var dashboard = express.static("dashboard");
+app.use(
+    function(req,res,next){
+        if (req.session.CORREO){
+            //Significa que el usuario si esta logueado
+            if (req.session.CONTRASENA == 1)
+                dashboard(req,res,next);
+   
+        }
+        else
+            return next();
+    }
+);
+
 
 
 
@@ -251,30 +260,7 @@ app.listen(8111, function(){
 
 //************************************************************************* */
 
-/*var http = require('http');
-var url = require('url');
-var fs = require('fs');
-http.createServer(function(peticion, respuesta){
-   var path_nombre = (url.parse(peticion.url).pathname == '/') ? '/index.html' : url.parse(peticion.url).pathname;
-   var ruta_a_archivo = 'contenido/' + path_nombre;
-   fs.exists(ruta_a_archivo, function(existe){
-      if(existe){
-         fs.readFile(ruta_a_archivo, function(error, contenido_archivo){
-            if(error){
-               respuesta.writeHead(500, 'text/plain');
-               respuesta.end('Error interno.');
-            }else{
-               respuesta.writeHead(200, {'Content-Type': 'text/html'});
-               respuesta.end(contenido_archivo);
-            }
-         });
-      }else{
-         respuesta.writeHead(404, 'text/plain');
-         respuesta.end('Error 404. El enlace no existe o ha dejado de existir.');
-      }
-   });
-}).listen(3000, '127.0.0.1');
-console.log('El servidor esta funcionando correctamente en https://localhost:3000/'); */
+
 
 
 
