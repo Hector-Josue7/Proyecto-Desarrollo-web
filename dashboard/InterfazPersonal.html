@@ -21,7 +21,12 @@
 
 
 <link rel="stylesheet"
-      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
+	  href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/styles/default.min.css">
+	  
+
+	  <link rel="stylesheet" href="/path/to/styles/default.css">
+	  
+
 
   
   <style>
@@ -291,10 +296,20 @@ textarea {
 						  </div> 
 					</td>
 					<td>
-							<div class="form-group col-xl-3 col-lg-3 col-12" id="editor"> 
+							<div class="form-group col-xl-3 col-lg-3 col-12" > 
 							
-								<textarea   rows="10" cols="35" id="comentarios" name="comentarios"></textarea>
-							  </div> 
+								<!--
+                  <textarea   rows="10" cols="35" id="comentarios" name="comentarios"></textarea>
+								-->
+							  <pre>
+									
+									
+									<code class="html">
+											<textarea   rows="10" cols="35" id="comentarios" name="comentarios"></textarea>
+							  </code></pre>
+							
+							</div> 
+							
 						</td>
 				  </tr>
 		
@@ -302,22 +317,13 @@ textarea {
 			  </table>
 
 			
-			  <pre id="editor1">autoresizing editor</pre>
-			  <div class="scrollmargin"></div>
-			  <pre id="editor2">minHeight = 2 lines</pre>
-			  <div class="scrollmargin"></div>
-			  <pre id="editor3" style="width: 40%;"></pre>
-			  <div class="scrollmargin"></div>
-			  <pre id="editor"></pre>
-			  
-			  <script src="kitchen-sink/require.js"></script>
-			 
-			  
-			  <script src="./show_own_source.js"></script>
+			  <pre><code class="html"> </code></pre>
 
 				  
 
+<script>
 
+</script>
 
 		
 	
@@ -385,6 +391,9 @@ function main () {
 }
 
 	  </script>
+
+<script src="/path/to/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
 	  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.13.1/build/highlight.min.js"></script>
 	  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
 	  
