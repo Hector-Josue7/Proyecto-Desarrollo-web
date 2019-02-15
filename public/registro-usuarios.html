@@ -4,32 +4,137 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1  shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css" />
    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<style>
+/*
+p.solid {border-style: solid;}
+
+  border: 2px solid red;
+  border-radius: 5px;
+
+
+
+  div {
+  border: 1px solid black;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: lightblue;
+
+
+
+}
+
+  margin: auto;
+<
+*/
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} 
+
+
+div.fixed {
+    margin: auto;
+  position: fixed;
+  bottom: 2;
+  right: 2;
+  width: 300px;
+  border: 3px solid rgb(19, 28, 82);
+}
+h1 {
+
+  text-align: center;
+}
+
+</style>
+
 </head>
 <body>
+    <div class="container fixed">
+
+        <div class="row justify-content-around">
+              
+          
+            <form action="" class="form-group">
+
+                        <input type="text" id="nombre" placeholder="nombre" class ="form-control"><br>
+                        <input type="text" id="apellido" placeholder="apellido" class="form-control"><br>
+                        <input type="email" id="correo" placeholder ="correo" class="form-control"><br>
+                        <input type="password" id ="clave" placeholder="contraseña"><br>
+                        <div>
+                            <b>Birthday</b>
+                            <input  type="date" placeholder="Birthday" id= "birthday">
+                        
+                        
+                          
+                        </div>
+                        <select id="plan">
+                            <option value="-">Gratis</option>
+                            <option value="1">Normal</option>
+                            <option value="2">Avanzado</option>
+                         
+                        </select>
+                        
+                        
+                            </form>
+
+        </div>
     
-    <form action="">
-
-<input type="text" id="nombre" placeholder="nombre"><br>
-<input type="text" id="apellido" placeholder="apellido"><br>
-<input type="email" id="correo" placeholder ="correo"><br>
-<input type="password" id ="clave" placeholder="contraseña"><br>
-<div>
-    <b>Birthday</b>
-    <input  type="date" placeholder="Birthday" id= "birthday">
 
 
-  
-</div>
-<select id="plan">
-    <option value="-">Gratis</option>
-    <option value="1">Normal</option>
-    <option value="2">Avanzado</option>
- 
-</select>
+    </div>
 
+    <!--
+            <div class="card-group">
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="..." class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+          </div>
 
-    </form>
+    -->
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+
 </body>
 </html>
